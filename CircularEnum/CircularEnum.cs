@@ -26,7 +26,7 @@ namespace CircularEnumerator
         public static CircularEnum<T> operator +(CircularEnum<T> circEnum, int num)
         {
             int newEnumPos = (int)(object)circEnum.Enumeration + num;
-            if (newEnumPos >= ElementCount)
+            if (newEnumPos >= ElementCount || newEnumPos < 0)
             {
                 return new CircularEnum<T>((T)(object)(newEnumPos % ElementCount));
             }
